@@ -1,0 +1,15 @@
+{
+  "name": "bitebuddies",
+  "version": "1.0.0",
+  "description": "CS545 Final Project",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Melissa Ozcan, Nusiba Zaman, Olof Persson, Diego Ramirez, Kate Choi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
