@@ -10,7 +10,6 @@
 
 <body>
     <main>
-        <!--action="" keeps it on this page.-->
         <form class="form 1" action="" method="POST">
             <p>Do you have any dietary restrictions?</p>
             <input type="radio" id="vegan" name="dietary" value="vegan">
@@ -45,12 +44,9 @@
         </script>
 
         <!--https://stackoverflow.com/questions/6393827/can-i-nest-a-button-element-inside-an-a-using-html5-->
-        <form action="http://localhost:3000/suggestions/" method="get">
+        <form action="http://localhost:3000/suggestions/" method="GET">
             <button id="suggestions">Display suggestions!</button>
         </form>
-
-        <!--https://www.shecodes.io/athena/3469-how-to-display-text-when-a-button-is-clicked-with-javascript-->
-        <div id="suggestions" style="display: none;">Suggestions</div>
     </main>
     
 </body>
