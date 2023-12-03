@@ -9,7 +9,50 @@
 </head>
 
 <body>
-    <h1>Bite Buddies</h1>
+    <main>
+        <!--action="" keeps it on this page.-->
+        <form class="form 1" action="" method="POST">
+            <p>Do you have any dietary restrictions?</p>
+            <input type="radio" id="vegan" name="dietary" value="vegan">
+            <label for="vegan">Vegan</label><br>
+            <input type="radio" id="vegetarian" name="dietary" value="vegetarian">
+            <label for="vegetarian">Vegetarian</label><br>
+            <input type="radio" id="none" name="dietary" value="none">
+            <label for="none">None</label><br>
+        </form>
+        <form class="form 2" action="" method="POST">
+            <p>What is your budget (1=cheapest, 5=most expensive)?</p>
+            <input type="radio" id="1" name="budget" value="1">
+            <label for="1">$</label><br>
+            <input type="radio" id="2" name="budget" value="2">
+            <label for="2">$$</label><br>
+            <input type="radio" id="3" name="budget" value="3">
+            <label for="3">$$$</label><br>
+            <input type="radio" id="4" name="budget" value="4">
+            <label for="4">$$$$</label><br>
+            <input type="radio" id="5" name="budget" value="5">
+            <label for="5">$$$$$</label><br>
+        </form>
+        <button id="submit" type="submit" onclick="submit()">Submit info!</button>
+        <script>
+            function submit() {
+                let forms = document.getElementsByClassName("form");
+                for (var i = 0; i < forms.length; i++) {
+                    forms[i].submit();
+                }
+                alert("Your info has been submitted!");
+            }
+        </script>
+
+        <!--https://stackoverflow.com/questions/6393827/can-i-nest-a-button-element-inside-an-a-using-html5-->
+        <form action="http://localhost:3000/suggestions/" method="get">
+            <button id="suggestions">Display suggestions!</button>
+        </form>
+
+        <!--https://www.shecodes.io/athena/3469-how-to-display-text-when-a-button-is-clicked-with-javascript-->
+        <div id="suggestions" style="display: none;">Suggestions</div>
+    </main>
+    
 </body>
 
 </html>

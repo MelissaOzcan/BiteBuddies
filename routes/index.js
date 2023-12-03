@@ -1,9 +1,11 @@
-import route from './route.js';
+import landingRoute from './landingPage.js';
+import suggestionsRoute from './suggestions.js';
 
 const constructorMethod = (app) => {
-    app.use('/', route);
+    app.use('/', landingRoute);
+    app.use('/suggestions', suggestionsRoute);
     app.use('*', (req, res) => {
-        res.sendStatus(404).json({ error: 'Route Not found' });
+        res.sendStatus(404);
     });
 }
 
