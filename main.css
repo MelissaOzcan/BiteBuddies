@@ -3,7 +3,26 @@ body {
 	font-size: 14pt;
 }
 
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
 form {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
+}
+button {
+	background-color: white;
+	border-color: black;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 5px 0px;
+}
+button:hover{
+	background-color: red;
+	cursor: pointer
 }
