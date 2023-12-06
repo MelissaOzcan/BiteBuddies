@@ -1,6 +1,8 @@
 html,
 body {
 	font-size: 14pt;
+	font-family: 'Kanit', sans-serif;
+	background-color: mediumseagreen;
 }
 
 main {
@@ -23,6 +25,25 @@ button {
 	margin: 5px 0px;
 }
 button:hover{
-	background-color: red;
+	background-color:mediumturquoise;
 	cursor: pointer
+}
+
+header {
+    background-color: mediumspringgreen;
+    padding: 20px;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow */
+}
+
+footer {
+    background-color: mediumspringgreen;
+    padding: 20px;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.2); /* Shadow at the top for footer */
+    color: white; /* Text color for better contrast */
 }
