@@ -73,27 +73,46 @@
                
                 if (validateForm(dietaryForm) && validateForm(budgetForm)) {
                     let recipes = [
-                        { name: "Vegan Salad", dietary: "vegan", budget: 2, ingredients: ["lettuce", "tomato", "cucumber"] },
-                        { name: "Vegetarian Pasta", dietary: "vegetarian", budget: 3, ingredients: ["pasta", "tomato sauce", "cheese"] },
-                        { name: "Chicken Stir-Fry", dietary: "none", budget: 4, ingredients: ["chicken", "vegetables", "soy sauce"] }
+                        { name: "Vegan Salad", dietary: "vegan", budget: 1, ingredients: ["lettuce", "tomato", "cucumber"] },
+                        { name: "Vegan Stir-Fry", dietary: "vegan", budget: 2, ingredients: ["tofu", "vegetables", "soy sauce"] },
+                        { name: "Vegan Pasta", dietary: "vegan", budget: 3, ingredients: ["pasta", "tomato sauce", "vegetables"] },
+                        { name: "Vegan Curry", dietary: "vegan", budget: 4, ingredients: ["chickpeas", "coconut milk", "spices"] },
+                        { name: "Vegan Pizza", dietary: "vegan", budget: 5, ingredients: ["pizza dough", "tomato sauce", "vegan cheese"] },
+                        { name: "Vegetarian Salad", dietary: "vegetarian", budget: 1, ingredients: ["lettuce", "tomato", "cucumber"] },
+                        { name: "Vegetarian Pasta", dietary: "vegetarian", budget: 2, ingredients: ["pasta", "tomato sauce", "cheese"] },
+                        { name: "Vegetarian Stir-Fry", dietary: "vegetarian", budget: 3, ingredients: ["tofu", "vegetables", "soy sauce"] },
+                        { name: "Vegetarian Curry", dietary: "vegetarian", budget: 4, ingredients: ["chickpeas", "vegetables", "coconut milk"] },
+                        { name: "Vegetarian Pizza", dietary: "vegetarian", budget: 5, ingredients: ["pizza dough", "tomato sauce", "cheese"] },
+                        { name: "Chicken Stir-Fry", dietary: "none", budget: 1, ingredients: ["chicken", "vegetables", "soy sauce"] },
+                        { name: "Spaghetti Bolognese", dietary: "none", budget: 2, ingredients: ["ground beef", "tomato sauce", "spaghetti"] },
+                        { name: "Grilled Salmon", dietary: "none", budget: 3, ingredients: ["salmon", "lemon", "herbs"] },
+                        { name: "Beef Tenderloin Steak", dietary: "none", budget: 4, ingredients: ["beef tenderloin", "butter", "garlic"] },
+                        { name: "Lobster Thermidor", dietary: "none", budget: 5, ingredients: ["lobster", "white wine", "cream"] },
                     ];
 
                     let selectedDietary = dietaryForm.querySelector('input:checked').value;
                     let selectedBudget = budgetForm.querySelector('input:checked').value;
 
-                    let filteredRecipes = recipes.filter(recipe => recipe.dietary === selectedDietary && recipe.budget == selectedBudget);
+                    // Filter recipes based on dietary and budget criteria
+                    let filteredRecipes = recipes.filter(recipe => {
+                        return (recipe.dietary === selectedDietary) && (recipe.budget <= selectedBudget);
+                    });
+
+// Sort recipes by budget in ascending order
+                    filteredRecipes.sort((a, b) => a.budget - b.budget);
 
                     recipeContainer.innerHTML = "<h2>Recipe Suggestions</h2>";
+
                     if (filteredRecipes.length > 0) {
+                        recipeContainer.innerHTML += "<ol>";
                         filteredRecipes.forEach(recipe => {
-                            let recipeHTML = `<div><h3>${recipe.name}</h3><p>Ingredients: ${recipe.ingredients.join(', ')}</p></div>`;
+                            let recipeHTML = `<li><h3>${recipe.name}</h3><p>Ingredients: ${recipe.ingredients.join(', ')}</p></li>`;
                             recipeContainer.innerHTML += recipeHTML;
                         });
-                        recipeContainer.style.display = "block";
-                    } else {
-                        recipeContainer.innerHTML += "<p>No recipes found for your selections.</p>";
+                        recipeContainer.innerHTML += "</ol>";
                         recipeContainer.style.display = "block";
                     }
+
                 } else {
                     alert("Please fill out both forms!");
                 }
