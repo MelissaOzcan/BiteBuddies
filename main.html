@@ -46,7 +46,7 @@
             <button id="suggestions" type="button" onclick="displaySuggestions()">Display suggestions!</button>
         </form>
 
-        <div id="recipeContainer"></div>
+        <div id="recipeContainer" style="display: none;"></div>
 
         <script>
             function submitInfo() {
@@ -89,8 +89,10 @@
                             let recipeHTML = `<div><h3>${recipe.name}</h3><p>Ingredients: ${recipe.ingredients.join(', ')}</p></div>`;
                             recipeContainer.innerHTML += recipeHTML;
                         });
+                        recipeContainer.style.display = "block";
                     } else {
                         recipeContainer.innerHTML += "<p>No recipes found for your selections.</p>";
+                        recipeContainer.style.display = "block";
                     }
                 } else {
                     alert("Please fill out both forms!");
