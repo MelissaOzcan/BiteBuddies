@@ -23,6 +23,10 @@
             <label for="vegan">Vegan</label><br>
             <input type="radio" id="vegetarian" name="dietary" value="vegetarian">
             <label for="vegetarian">Vegetarian</label><br>
+            <input type="radio" id="kosher" name="dietary" value="kosher">
+            <label for="kosher">Kosher</label><br>
+            <input type="radio" id="pescetarian" name="dietary" value="pescetarian">
+            <label for="pescetarian">Pescetarian</label><br>
             <input type="radio" id="none" name="dietary" value="none">
             <label for="none">None</label><br>
         </form>
@@ -60,8 +64,8 @@
                     alert("Please fill out both forms!");
                 }
             }
+
             function validateForm(form) {
-                
                 let selectedOptions = form.querySelectorAll('input:checked');
                 return selectedOptions.length > 0;
             }
@@ -71,35 +75,192 @@
                 let budgetForm = document.getElementById("budgetForm");
                 let recipeContainer = document.getElementById("recipeContainer");
 
-               
                 if (validateForm(dietaryForm) && validateForm(budgetForm)) {
                     let recipes = [
-                        { name: "Vegan Salad", dietary: "vegan", budget: 1, ingredients: ["lettuce", "tomato", "cucumber"] },
-                        { name: "Vegan Stir-Fry", dietary: "vegan", budget: 2, ingredients: ["tofu", "vegetables", "soy sauce"] },
-                        { name: "Vegan Pasta", dietary: "vegan", budget: 3, ingredients: ["pasta", "tomato sauce", "vegetables"] },
-                        { name: "Vegan Curry", dietary: "vegan", budget: 4, ingredients: ["chickpeas", "coconut milk", "spices"] },
-                        { name: "Vegan Pizza", dietary: "vegan", budget: 5, ingredients: ["pizza dough", "tomato sauce", "vegan cheese"] },
-                        { name: "Vegetarian Salad", dietary: "vegetarian", budget: 1, ingredients: ["lettuce", "tomato", "cucumber"] },
-                        { name: "Vegetarian Pasta", dietary: "vegetarian", budget: 2, ingredients: ["pasta", "tomato sauce", "cheese"] },
-                        { name: "Vegetarian Stir-Fry", dietary: "vegetarian", budget: 3, ingredients: ["tofu", "vegetables", "soy sauce"] },
-                        { name: "Vegetarian Curry", dietary: "vegetarian", budget: 4, ingredients: ["chickpeas", "vegetables", "coconut milk"] },
-                        { name: "Vegetarian Pizza", dietary: "vegetarian", budget: 5, ingredients: ["pizza dough", "tomato sauce", "cheese"] },
-                        { name: "Chicken Stir-Fry", dietary: "none", budget: 1, ingredients: ["chicken", "vegetables", "soy sauce"] },
-                        { name: "Spaghetti Bolognese", dietary: "none", budget: 2, ingredients: ["ground beef", "tomato sauce", "spaghetti"] },
-                        { name: "Grilled Salmon", dietary: "none", budget: 3, ingredients: ["salmon", "lemon", "herbs"] },
-                        { name: "Beef Tenderloin Steak", dietary: "none", budget: 4, ingredients: ["beef tenderloin", "butter", "garlic"] },
-                        { name: "Lobster Thermidor", dietary: "none", budget: 5, ingredients: ["lobster", "white wine", "cream"] },
+    {
+        name: "Vegan Salad",
+        dietary: "vegan",
+        budget: 1,
+        ingredients: ["lettuce", "tomato", "cucumber"],
+        recipe: "1. Wash and chop the lettuce, tomato, and cucumber.\n2. Toss the vegetables in a bowl.\n3. Optional: Add a dressing of your choice.\n4. Enjoy your refreshing vegan salad!"
+    },
+    {
+        name: "Vegan Stir-Fry",
+        dietary: "vegan",
+        budget: 2,
+        ingredients: ["tofu", "mixed vegetables (e.g., broccoli, bell peppers, carrots)", "soy sauce"],
+        recipe: "1. Press tofu to remove excess water and cut it into cubes.\n2. Stir-fry tofu and mixed vegetables in a pan.\n3. Add soy sauce for flavor.\n4. Serve over rice or noodles.\n5. Garnish with sesame seeds or green onions."
+    },
+    {
+        name: "Vegan Pasta",
+        dietary: "vegan",
+        budget: 3,
+        ingredients: ["pasta", "tomato sauce", "vegetables"],
+        recipe: "1. Cook pasta according to package instructions.\n2. Sauté vegetables in a pan.\n3. Add tomato sauce and let it simmer.\n4. Mix in cooked pasta.\n5. Season to taste.\n6. Enjoy your delicious vegan pasta!"
+    },
+    {
+        name: "Vegan Curry",
+        dietary: "vegan",
+        budget: 4,
+        ingredients: ["chickpeas", "coconut milk", "spices"],
+        recipe: "1. Cook chickpeas until tender.\n2. In a pot, combine chickpeas, coconut milk, and spices.\n3. Simmer until flavors meld.\n4. Serve over rice or quinoa.\n5. Garnish with fresh herbs."
+    },
+    {
+        name: "Vegan Pizza",
+        dietary: "vegan",
+        budget: 5,
+        ingredients: ["pizza dough", "tomato sauce", "vegan cheese", "vegetables"],
+        recipe: "1. Roll out pizza dough and spread tomato sauce.\n2. Top with vegan cheese and your favorite vegetables.\n3. Bake in the oven until crust is golden and cheese is melted.\n4. Slice and enjoy your homemade vegan pizza!"
+    },
+    {
+        name: "Vegetarian Salad",
+        dietary: "vegetarian",
+        budget: 1,
+        ingredients: ["lettuce", "tomato", "cucumber"],
+        recipe: "1. Wash and chop the lettuce, tomato, and cucumber.\n2. Toss the vegetables in a bowl.\n3. Optional: Add a dressing of your choice.\n4. Enjoy your refreshing vegetarian salad!"
+    },
+    {
+        name: "Vegetarian Pasta",
+        dietary: "vegetarian",
+        budget: 2,
+        ingredients: ["pasta", "tomato sauce", "cheese"],
+        recipe: "1. Cook pasta according to package instructions.\n2. Heat tomato sauce in a pan.\n3. Mix in cooked pasta.\n4. Top with grated cheese.\n5. Bake until cheese is melted.\n6. Delight in your cheesy vegetarian pasta!"
+    },
+    {
+        name: "Vegetarian Stir-Fry",
+        dietary: "vegetarian",
+        budget: 3,
+        ingredients: ["tofu", "mixed vegetables (e.g., broccoli, bell peppers, carrots)", "soy sauce"],
+        recipe: "1. Press tofu to remove excess water and cut it into cubes.\n2. Stir-fry tofu and mixed vegetables in a pan.\n3. Add soy sauce for flavor.\n4. Serve over rice or noodles.\n5. Garnish with sesame seeds or green onions."
+    },
+    {
+        name: "Vegetarian Curry",
+        dietary: "vegetarian",
+        budget: 4,
+        ingredients: ["chickpeas", "vegetables", "coconut milk", "spices"],
+        recipe: "1. Cook chickpeas until tender.\n2. In a pot, combine chickpeas, vegetables, coconut milk, and spices.\n3. Simmer until flavors meld.\n4. Serve over rice or quinoa.\n5. Garnish with fresh herbs."
+    },
+    {
+        name: "Vegetarian Pizza",
+        dietary: "vegetarian",
+        budget: 5,
+        ingredients: ["pizza dough", "tomato sauce", "cheese", "vegetables"],
+        recipe: "1. Roll out pizza dough and spread tomato sauce.\n2. Top with cheese and your favorite vegetables.\n3. Bake in the oven until crust is golden and cheese is melted.\n4. Slice and enjoy your homemade vegetarian pizza!"
+    },
+    {
+        name: "Kosher Chicken Soup",
+        dietary: "kosher",
+        budget: 1,
+        ingredients: ["chicken", "carrots", "matzo balls"],
+        recipe: "1. Simmer chicken, carrots, and matzo balls in a pot.\n2. Season with salt and pepper.\n3. Serve hot for a comforting bowl of kosher chicken soup!"
+    },
+    {
+        name: "Kosher Beef Stew",
+        dietary: "kosher",
+        budget: 2,
+        ingredients: ["beef", "potatoes", "onions"],
+        recipe: "1. Brown beef in a pot.\n2. Add potatoes, onions, and enough water to cover.\n3. Simmer until beef is tender.\n4. Season to taste.\n5. Enjoy a hearty bowl of kosher beef stew!"
+    },
+    {
+        name: "Kosher Salmon Fillet",
+        dietary: "kosher",
+        budget: 3,
+        ingredients: ["salmon", "lemon", "dill"],
+        recipe: "1. Season salmon fillet with lemon and dill.\n2. Bake or grill until salmon is cooked through.\n3. Squeeze extra lemon on top.\n4. Relish in a flavorful kosher salmon fillet!"
+    },
+    {
+        name: "Kosher Vegetable Kugel",
+        dietary: "kosher",
+        budget: 4,
+        ingredients: ["potatoes", "carrots", "onions"],
+        recipe: "1. Grate potatoes, carrots, and onions.\n2. Mix with eggs and seasoning.\n3. Bake until golden and crispy.\n4. Serve slices of delicious kosher vegetable kugel!"
+    },
+    {
+        name: "Kosher Tiramisu",
+        dietary: "kosher",
+        budget: 5,
+        ingredients: ["sponge cake", "coffee", "mascarpone"],
+        recipe: "1. Layer sponge cake in a dish.\n2. Soak with coffee.\n3. Spread mascarpone over the cake.\n4. Repeat layers.\n5. Chill and savor your delectable kosher tiramisu!"
+    },
+    {
+        name: "Pescetarian Sushi Bowl",
+        dietary: "pescetarian",
+        budget: 1,
+        ingredients: ["rice", "avocado", "seaweed", "fish"],
+        recipe: "1. Cook rice and let it cool.\n2. Arrange rice in a bowl.\n3. Top with sliced avocado, seaweed, and your favorite fish.\n4. Drizzle with soy sauce.\n5. Enjoy a quick pescetarian sushi bowl!"
+    },
+    {
+        name: "Pescetarian Shrimp Pasta",
+        dietary: "pescetarian",
+        budget: 2,
+        ingredients: ["shrimp", "pasta", "tomato sauce"],
+        recipe: "1. Cook pasta according to package instructions.\n2. Sauté shrimp in a pan.\n3. Add tomato sauce and simmer.\n4. Toss in cooked pasta.\n5. Garnish with fresh herbs.\n6. Delight in your pescetarian shrimp pasta!"
+    },
+    {
+        name: "Pescetarian Grilled Fish Tacos",
+        dietary: "pescetarian",
+        budget: 3,
+        ingredients: ["fish fillets", "tortillas", "cabbage slaw"],
+        recipe: "1. Grill fish fillets until cooked.\n2. Warm tortillas on the grill.\n3. Assemble tacos with grilled fish and cabbage slaw.\n4. Drizzle with lime crema.\n5. Indulge in flavorful pescetarian fish tacos!"
+    },
+    {
+        name: "Pescetarian Seafood Paella",
+        dietary: "pescetarian",
+        budget: 4,
+        ingredients: ["seafood mix", "rice", "saffron"],
+        recipe: "1. Sauté seafood mix in a paella pan.\n2. Add rice and saffron.\n3. Pour in broth and simmer until rice is cooked.\n4. Garnish with lemon wedges.\n5. Enjoy a taste of pescetarian seafood paella!"
+    },
+    {
+        name: "Pescetarian Lobster Thermidor",
+        dietary: "pescetarian",
+        budget: 5,
+        ingredients: ["lobster", "white wine", "cream"],
+        recipe: "1. Cook lobster and remove meat from the shell.\n2. In a saucepan, mix white wine and cream.\n3. Add lobster meat and cook until heated through.\n4. Serve in the lobster shell.\n5. Delight in a luxurious pescetarian lobster thermidor!"
+    },
+    {
+        name: "Chicken Stir-Fry",
+        dietary: "none",
+        budget: 1,
+        ingredients: ["chicken", "mixed vegetables", "soy sauce"],
+        recipe: "1. Slice chicken into strips.\n2. Stir-fry chicken and mixed vegetables in a pan.\n3. Add soy sauce for flavor.\n4. Serve over rice or noodles.\n5. Enjoy a quick and delicious chicken stir-fry!"
+    },
+    {
+        name: "Spaghetti Bolognese",
+        dietary: "none",
+        budget: 2,
+        ingredients: ["ground beef", "tomato sauce", "spaghetti"],
+        recipe: "1. Brown ground beef in a pan.\n2. Add tomato sauce and simmer.\n3. Cook spaghetti according to package instructions.\n4. Toss spaghetti in the Bolognese sauce.\n5. Garnish with grated Parmesan.\n6. Savor your classic spaghetti Bolognese!"
+    },
+    {
+        name: "Grilled Salmon",
+        dietary: "none",
+        budget: 3,
+        ingredients: ["salmon fillet", "lemon", "herbs"],
+        recipe: "1. Season salmon fillet with herbs and lemon.\n2. Grill until salmon is cooked through.\n3. Squeeze extra lemon on top.\n4. Enjoy a simple and flavorful grilled salmon!"
+    },
+    {
+        name: "Beef Tenderloin Steak",
+        dietary: "none",
+        budget: 4,
+        ingredients: ["beef tenderloin", "butter", "garlic"],
+        recipe: "1. Season beef tenderloin with salt and pepper.\n2. Sear in a hot pan with butter and garlic.\n3. Cook to your desired level of doneness.\n4. Rest before slicing.\n5. Relish in a juicy beef tenderloin steak!"
+    },
+    {
+        name: "Lobster Thermidor",
+        dietary: "none",
+        budget: 5,
+        ingredients: ["lobster", "white wine", "cream"],
+        recipe: "1. Cook lobster and remove meat from the shell.\n2. In a saucepan, mix white wine and cream.\n3. Add lobster meat and cook until heated through.\n4. Serve in the lobster shell.\n5. Delight"}
+
                     ];
 
                     let selectedDietary = dietaryForm.querySelector('input:checked').value;
                     let selectedBudget = budgetForm.querySelector('input:checked').value;
 
-                    // Filter recipes based on dietary and budget criteria
                     let filteredRecipes = recipes.filter(recipe => {
                         return (recipe.dietary === selectedDietary) && (recipe.budget <= selectedBudget);
                     });
 
-// Sort recipes by budget in ascending order
                     filteredRecipes.sort((a, b) => a.budget - b.budget);
 
                     recipeContainer.innerHTML = "<h2>Recipe Suggestions</h2>";
@@ -107,13 +268,20 @@
                     if (filteredRecipes.length > 0) {
                         recipeContainer.innerHTML += "<ol>";
                         filteredRecipes.forEach(recipe => {
-                            let recipeHTML = `<li><h3>${recipe.name}</h3><p>Ingredients: ${recipe.ingredients.join(', ')}</p></li>`;
+                            let recipeHTML = `
+                                <li>
+                                    <h3>${recipe.name}</h3>
+                                    <p>Ingredients: ${recipe.ingredients.join(', ')}</p>
+                                    <p>Recipe: ${recipe.recipe}</p>
+                                </li>`;
                             recipeContainer.innerHTML += recipeHTML;
                         });
                         recipeContainer.innerHTML += "</ol>";
                         recipeContainer.style.display = "block";
+                    } else {
+                        recipeContainer.innerHTML += "<p>No recipes found for your selections.</p>";
+                        recipeContainer.style.display = "block";
                     }
-
                 } else {
                     alert("Please fill out both forms!");
                 }
@@ -123,7 +291,6 @@
 
     <footer>
     </footer>
-
 </body>
 
 </html>
