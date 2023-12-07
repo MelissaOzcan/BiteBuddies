@@ -7,7 +7,7 @@
     <title>Bite Buddies</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
 </head>
 
@@ -15,8 +15,13 @@
     <header>
         <h1>Bite Buddies</h1>
         <h2>We are focused on helping students make meals that work for them! Nutrition is an important part of maintainng a healthy lifestyle; no matter your dietary resitriction or budget BiteBuddies has delicious options for you to enjoy!</h2>
-        <a href="aboutus.html"><button>Learn More About Us</button></a>
-        <a href="nutrition.html"><button>Why is nutrition so important?</button></a>
+        <div class="dropdown">
+            <button class="dropbtn">Menu &#9662;</button>
+            <div class="dropdown-content">
+                <a href="aboutus.html">Learn More About Us</a>
+                <a href="nutrition.html">Why is nutrition so important?</a>
+            </div>
+        </div>
     </header>
     <main>
         <form id="dietaryForm" action="#" method="POST">
@@ -281,6 +286,7 @@
     </main>
 
     <footer>
+        <h4>&copyBite Buddies LLC. <i>All rights reserved.</i></h4>
     </footer>
 </body>
 
