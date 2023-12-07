@@ -45,7 +45,6 @@
             <label for="5">$$$$$</label><br>
         </form>
 
-        <button id="submit" type="button" onclick="submitInfo()">Submit info!</button>
 
         <form id="suggestionsForm" action="#" method="GET">
             <button id="suggestions" type="button" onclick="displaySuggestions()">Display suggestions!</button>
@@ -54,17 +53,7 @@
         <div id="recipeContainer" style="display: none;"></div>
 
         <script>
-            function submitInfo() {
-                let dietaryForm = document.getElementById("dietaryForm");
-                let budgetForm = document.getElementById("budgetForm");
-
-                if (validateForm(dietaryForm) && validateForm(budgetForm)) {
-                    alert("Your info has been submitted!");
-                } else {
-                    alert("Please fill out both forms!");
-                }
-            }
-
+            
             function validateForm(form) {
                 let selectedOptions = form.querySelectorAll('input:checked');
                 return selectedOptions.length > 0;
