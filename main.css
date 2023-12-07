@@ -2,7 +2,7 @@ html,
 body {
 	font-size: 14pt;
 	font-family: 'Kanit', sans-serif;
-	background-color: mediumseagreen;
+	background-color: #fdf0d5;
 }
 
 main {
@@ -25,12 +25,12 @@ button {
 	margin: 5px 0px;
 }
 button:hover{
-	background-color:mediumturquoise;
+	background-color:#0ead69;
 	cursor: pointer
 }
 
 header {
-    background-color: mediumspringgreen;
+    background-color: #0ead69;
     padding: 20px;
     text-align: center;
     border-bottom-left-radius: 20px;
@@ -39,7 +39,7 @@ header {
 }
 
 footer {
-    background-color: mediumspringgreen;
+    background-color: #0ead69;
     padding: 20px;
     text-align: center;
     border-top-left-radius: 20px;
@@ -51,11 +51,11 @@ footer {
 
 input[type=radio] {
 	--s: 1.2em;     
-	--c: black; 
+	--c: #0ead69; 
 	
 	height: var(--s);
 	aspect-ratio: 1;
-	border: calc(var(--s)/8) solid white;
+	border: calc(var(--s)/8) solid black;
 	padding: calc(var(--s)/8);
 	background: 
 	   radial-gradient(farthest-side,var(--c) 94%,#0000) 
@@ -76,7 +76,7 @@ input[type=radio] {
   
   input[type=radio]:disabled {
 	background: 
-	   linear-gradient(white 0 0) 
+	   linear-gradient(black 0 0) 
 	   50%/100% 20% no-repeat content-box;
 	opacity: .5;
 	cursor: not-allowed;
@@ -101,7 +101,8 @@ input[type=radio] {
 
 
   #recipeContainer {
-    border: 5px solid mediumseagreen;
+    border: 5px solid #ba7ba1a2;
+	background-color: #ba7ba1;
     border-radius: 10px; 
     padding: 15px;
     margin-top: 20px;
