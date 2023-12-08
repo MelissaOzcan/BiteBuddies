@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bite Buddies</title>
+    <title>Bite Buddies: Recipe Suggestions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap" rel="stylesheet">
@@ -26,30 +26,54 @@
     <main>
         <form id="dietaryForm" action="#" method="POST">
             <h3>Do you have any dietary restrictions?</h3>
-            <input type="radio" id="vegan" name="dietary" value="vegan">
-            <label for="vegan">Vegan</label><br>
-            <input type="radio" id="vegetarian" name="dietary" value="vegetarian">
-            <label for="vegetarian">Vegetarian</label><br>
-            <input type="radio" id="kosher" name="dietary" value="kosher">
-            <label for="kosher">Kosher</label><br>
-            <input type="radio" id="pescetarian" name="dietary" value="pescetarian">
-            <label for="pescetarian">Pescetarian</label><br>
-            <input type="radio" id="none" name="dietary" value="none">
-            <label for="none">None</label><br>
+            <div style="display: flex; flex-direction: column;">
+                <div>
+                    <input type="radio" id="vegan" name="dietary" value="vegan">
+                    <label for="vegan">Vegan</label><br>
+                </div>
+                <div>
+                    <input type="radio" id="vegetarian" name="dietary" value="vegetarian">
+                    <label for="vegetarian">Vegetarian</label><br>
+                </div>
+                <div>
+                    <input type="radio" id="kosher" name="dietary" value="kosher">
+                    <label for="kosher">Kosher</label><br>
+                </div>
+                <div>
+                    <input type="radio" id="pescetarian" name="dietary" value="pescetarian">
+                    <label for="pescetarian">Pescetarian</label><br>
+                </div>
+                <div>
+                    <input type="radio" id="none" name="dietary" value="none">
+                    <label for="none">None</label><br>
+                </div>
+            </div>
         </form>
 
         <form id="budgetForm" action="#" method="POST">
             <h3>What is your budget (1=cheapest, 5=most expensive)?</h3>
-            <input type="radio" id="1" name="budget" value="1">
-            <label for="1">$</label><br>
-            <input type="radio" id="2" name="budget" value="2">
-            <label for="2">$$</label><br>
-            <input type="radio" id="3" name="budget" value="3">
-            <label for="3">$$$</label><br>
-            <input type="radio" id="4" name="budget" value="4">
-            <label for="4">$$$$</label><br>
-            <input type="radio" id="5" name="budget" value="5">
-            <label for="5">$$$$$</label><br>
+            <div style="display: flex; flex-direction: column;">
+                <div>
+                    <input type="radio" id="1" name="budget" value="1">
+                    <label for="1">$</label><br>
+                </div>
+                <div>
+                    <input type="radio" id="2" name="budget" value="2">
+                    <label for="2">$$</label><br>
+                </div>
+                <div>
+                    <input type="radio" id="3" name="budget" value="3">
+                    <label for="3">$$$</label><br>
+                </div>
+                <div>
+                    <input type="radio" id="4" name="budget" value="4">
+                    <label for="4">$$$$</label><br>
+                </div>
+                <div>
+                    <input type="radio" id="5" name="budget" value="5">
+                    <label for="5">$$$$$</label><br>
+                </div>
+            </div>
         </form>
 
 
